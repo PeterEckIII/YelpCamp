@@ -22,7 +22,7 @@ var userSchema = new mongoose.Schema({
   name: String,
   username: String,
   city: String,
-  state: String
+  state: String,
 })
 
 var commentSchema = new mongoose.Schema({
@@ -34,6 +34,7 @@ var commentSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 var User = mongoose.model("User", userSchema);
+var Comments = mongoose.model("Comments", commentSchema);
 
 // Homepage routing
 app.get("/", function(req, res) {
@@ -77,6 +78,10 @@ app.get("/campgrounds/new", function(req, res) {
   res.render("new.ejs");
 });
 
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+
 // Register routing
 app.get("/register", function(req, res) {
   res.render("register");
@@ -93,7 +98,14 @@ app.post("/register", function(req, res) {
   var state = req.body.inputState;
   var newUser = {email: email, password: password, name: name, username: username, city: city, state: state};
   // Push register data to the database as a new username
-
+  User.create(newUser, function(err, user) {
+    if(err) {
+      console.log(err);
+    }
+    else {
+      res.redirect("/");
+    }
+  });
   // Redirect to the homepage
   res.redirect("/");
 });
