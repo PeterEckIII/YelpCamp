@@ -1,32 +1,40 @@
-<% include partials/header %>
+<% include ../partials/header %>
 
-  <h1>Register</h1>
+	<h1 class="page-title" style="text-align:center;">Register</h1>
 
-  <form action="/" method="POST">
+  <form action="/:username" method="POST">
     <div class="container">
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <label for="inputEmail">Email</label>
           <input name="inputEmail" type="email" class="form-control" id="inputEmail" placeholder="frank@yelpcamp.org">
-        </div>
-        <div class="form-group col-md-6">
+				</div>
+			</div>
+			<div class="form-row">
+        <div class="form-group col-md-4">
           <label for="inputPassword">Password</label>
           <input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="ThatsAmore1">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputName">Name</label>
-        <input name="inputName" type="text" class="form-control" id="inputName" placeholder="Frank Sinatra">
-      </div>
-      <div class="form-group">
-        <label for="inputUsername">Username</label>
-        <input name="inputUsername" type="text" class="form-control" id="inputUsername" placeholder="@frank_sinatra">
-      </div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputName">Name</label>
+					<input name="inputName" type="text" class="form-control" id="inputName" placeholder="Frank Sinatra">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputUsername">Username</label>
+					<input name="inputUsername" type="text" class="form-control" id="inputUsername" placeholder="@frank_sinatra">
+				</div>
+			</div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputCity">City</label>
           <input name="inputCity" type="text" class="form-control" id="inputCity">
-        </div>
+				</div>
+			</div>
+			<div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputState">State</label>
           <select name="inputState" id="inputState" class="form-control">
@@ -83,10 +91,12 @@
           	<option value="WI">Wisconsin</option>
           	<option value="WY">Wyoming</option>
           </select>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Register</button>
-    </div>
+				</div>
+			</div>
+			<div class="form-row">
+				<button type="submit" class="btn btn-primary">Register</button>
+			</div>
+		</div>
   </form>
 
-<% include partials/footer %>
+<% include ../partials/footer %>
