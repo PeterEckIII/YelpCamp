@@ -21,6 +21,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 // ===============
 app.set("view engine", "ejs");
 
+// ========================
+// SETTING PUBLIC DIRECTORY
+// ========================
+app.use(express.static(__dirname + "/public"));
+
 seedDB();
 // var userSchema = new mongoose.Schema({
 //   userID: String,
