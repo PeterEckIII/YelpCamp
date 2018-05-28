@@ -38,7 +38,8 @@ app.use(express.static(__dirname + "/public"));
 //   SETTING currentUser VARIABLE
 // ==================================
 
-seedDB();
+// Seed Database
+// seedDB();
 
 // ===============
 // PASSPORT CONFIG
