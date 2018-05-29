@@ -5,3 +5,11 @@
 .img-thumbnail .caption-full {
     padding: 9px;
 }
+
+#deleteForm {
+    display: inline;
+}
+
+#editForm {
+    color: white;
+}
