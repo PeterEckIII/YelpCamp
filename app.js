@@ -4,6 +4,7 @@ var express         = require("express"),
     mongoose        = require('mongoose'),
     passport        = require('passport'),
     LocalStrategy   = require('passport-local'),
+    methodOverride  = require('method-override');
     Campground      = require('./models/campground'),
     User            = require('./models/user.js')
     Comment         = require("./models/comment"),
@@ -28,6 +29,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 // EJS VIEW ENGINE
 // ===============
 app.set("view engine", "ejs");
+
+// ================
+//  MEHOD OVERRIDE
+// ================
+app.use(methodOverride("_method"));
 
 // ========================
 // SETTING PUBLIC DIRECTORY
@@ -70,6 +76,7 @@ app.use(function(req, res, next) {
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+
 
 // ====================================================================================================
 //                                      LAUNCHING APP
