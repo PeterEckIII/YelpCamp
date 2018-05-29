@@ -20,16 +20,20 @@
                         <em>Submitted By: <%= campground.author.username %></em>
                     </p>
                     <p><%= campground.description %></p>
-                    <a id="editForm" href="/campgrounds/<%= campground._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
-                    <form id="deleteForm" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </form>
+                    <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                        <a id="editForm" href="/campgrounds/<%= campground._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                        <form id="deleteForm" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
-            <div class="card bg-light">
+            <div class="review-button">
                 <div class="text-right">
-                    <a class="btn btn-success mx-auto"href="/campgrounds/<%= campground._id %>/comments/new">Leave a Review</a>
+                    <a class="btn btn-success review-button"href="/campgrounds/<%= campground._id %>/comments/new">Leave a Review</a>
                 </div>
+            </div>
+            <div class="card comment-well">
                 <div>
                     <% campground.comments.forEach(function(comment) { %>
                         <div class="row">
