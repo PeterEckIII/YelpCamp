@@ -10,6 +10,7 @@
                 <li class="list-group-item">Info 3</li>
             </div>
         </div>
+        <!-- CAMPGROUND INFO SECTION -->
         <div class="col-md-9">
             <div class="img-thumbnail">
                 <img class="img-fluid d-block mx-auto" src="<%= campground.image %>">
@@ -33,6 +34,7 @@
                     <a class="btn btn-success review-button"href="/campgrounds/<%= campground._id %>/comments/new">Leave a Review</a>
                 </div>
             </div>
+            <!-- COMMENT SECTION -->
             <div class="card comment-well">
                 <div>
                     <% campground.comments.forEach(function(comment) { %>
@@ -43,6 +45,7 @@
                                 <p>
                                     <%= comment.text %>
                                 </p>
+                                <a id="comment-edit" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
                             </div>
                         </div>
                     <% }); %>
