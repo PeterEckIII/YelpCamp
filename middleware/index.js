@@ -48,10 +48,7 @@ middlewareObj.isLoggedIn = function(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-<<<<<<< HEAD
     req.flash("error", "You need to be logged in first");
-=======
->>>>>>> 2155557291ed1bbc949d5a703711ba790726233b
     res.redirect("/login");
 }
 
