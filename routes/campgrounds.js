@@ -77,13 +77,13 @@ router.get("/:id", function (req, res) {
 // ====================
 //      EDIT CAMP
 // ====================
-router.get("/:id/edit", middleware.isLoggedIn, middleware.checkCampgroundOwnership, function(req, res) {
+router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res) {
     Campground.findById(req.params.id, function(err, foundCampground) {
         if(err || !foundCampground) {
             req.flash("error", "There was a problem loading the page");
             return res.redirect("/campgrounds");
         }
-        res.render("campgrounds/edit", {campground: req.campground});
+        res.render("campgrounds/edit", {campground: foundCampground});
     });
 });
 
