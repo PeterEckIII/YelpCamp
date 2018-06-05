@@ -1,9 +1,37 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="tex/javascript" async></script>
+    </head>
+    <body>
+        <div class="container">
+            <% if(error && error.length > 0) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+            <% if(success & success.length > 0) { %>
+                <div class="alert alert-sucess" role="alert">
+                    <%= success %>
+                </div>
+            <% } %>
+        </div>
 
-<h1 class="jumbotron">Welcome to YelpCamp</h1>
+        <div id="landing-header">
+            <h1>Welcome to YelpCamp!</h1>
+            <a href="/campgrounds" class="btn btn-success">View All Campgrounds</a>
+        </div>
 
-<p>
-    YelpCamp is the online authority for campground information, reviews, and ratings. We provide the platform, you provide the experience! Feel free to check out our Campgrounds page by clicking <a href="/campgrounds">here</a>
-</p>
+        <ul class="carousel">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
 
-<% include partials/footer %>
+    </body>
+</html>
