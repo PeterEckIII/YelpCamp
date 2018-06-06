@@ -35,6 +35,22 @@
     margin-top: 20px;
 }
 
-form {
-    margin: 0 auto;
+.comments {
+    border-bottom: 1px solid gray;
 }
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 40%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .navbar {
+    bottom: 0;
+    width: 100%;
+}
+
