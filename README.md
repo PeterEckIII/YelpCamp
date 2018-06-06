@@ -1,4 +1,4 @@
-# YelpCamp
+# Camp Bug
 A campground social media site for sharing reviews, experiences, and advice about campgrounds from around the world
 
 This project is being completed as part of the Colt Steele Web Development Bootcamp. The general idea for the site is to house a social community of camp-goers where they can share reviews, insights, recommendations, and experiences. 
