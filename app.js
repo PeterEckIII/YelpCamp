@@ -19,8 +19,9 @@ var commentRoutes       = require('./routes/comments'),
 // ====================
 // CONNECT TO MONGOOSE
 // ====================
-// mongoose.connect("mongodb://localhost/yelp_camp"); 
-mongoose.connect("mongodb://admin:lucyeck1@ds049548.mlab.com:49548/yelp_camp");
+mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://localhost/yelp_camp"); 
+// mongoose.connect("mongodb://admin:lucyeck1@ds049548.mlab.com:49548/yelp_camp");
 // ==================
 // BODY PARSER CONFIG
 // ==================
