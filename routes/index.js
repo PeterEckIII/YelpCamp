@@ -45,7 +45,6 @@ router.post("/register", function (req, res) {
 //   LOGIN FORM
 // ================
 router.get("/login", function (req, res) {
-    req.flash("success", "Successfully logged you in!");
     res.render("./users/login");
 });
 
